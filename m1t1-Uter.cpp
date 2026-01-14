@@ -8,6 +8,7 @@ using namespace std;
 
 int main() {
     cout << "Hello CSC 134!" << endl; // E N D L
+    cout << "How's it going?" << endl; 
     cout << endl; // another new line
     return 0; // no errors
 }

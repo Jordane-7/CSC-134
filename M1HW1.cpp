@@ -15,7 +15,11 @@ int main () {
     << " came out in " << year_made << ", and had a world wide gross of around $" << office_gross << " million dollars.\n";
     cout << "Some of my favourite quotes form the movie include:\n";
     
-    cout << "How do you get fired on your day off?\n";
-    cout << "You win some you lose some, but you live. You live to fight another day\n";
-    cout << "Y’all got nothing that match. Kool-aid, no sugar. Peanut Butter no jelly. Ham, no burger!\n";
+   
+    
+    cout << "\"You win some you lose some, but you live. You live to fight another day.\"\n";
+    cout << "\"Y’all got nothing that match. Kool-aid, no sugar. Peanut Butter no jelly. Ham, no burger!\"\n";
+    cout << "Citation:\n";
+    
+    cout << "https://www.boxofficemojo.com/franchise/fr3477573381/\n";
 }

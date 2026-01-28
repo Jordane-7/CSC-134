@@ -43,10 +43,10 @@ int main() {
     // Cost and customer price
     cost = volume * COST_PER_CUBIC_FOOT;
     customer_price = volume * CHARGE_PER_CUBIC_FOOT;
-    profit = customer_price - cost;
+    profit = customer_price - cost; 
 
     // Output
-    cout << setprecision(2) << fixed;
+    cout << setprecision(2) << fixed << "\n";
     cout << "==== CRATE INFO ====" << endl;
     cout << "Volume is " << volume << " cubic feet." << endl;
     cout << "Wholesale price is $" << cost << endl;

@@ -25,15 +25,25 @@ int main() {
     double length, width, height, volume; // all in feet
     // Money variables
     double cost, customer_price, profit; // all in dollars
-    
+
 
 
     // Get Input
+    cout << "Whelcome to the Crate Cost Calculator!" << endl;
+    cout << "Enter the crate dimenions" << endl;
+    cout << "Crate Length? ";
+    cin >> length;
+    cout << "Crate Width? ";
+    cin >> width;
+    cout << "Crate Height? ";
+    cin >> height;
 
     // Calculations
+    volume = length * width * height;
+
 
     // Output
-
+    cout << "Volume is " << volume << " cubic feet." << endl;
 
 
     return 0;

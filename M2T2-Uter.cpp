@@ -1,7 +1,7 @@
 // CSC 134
 // M1T2 - Recipt Calculator
 // Jordane
-// 1/26/2025
+// 1/26/2026
 
 #include <iostream>
 using namespace std;

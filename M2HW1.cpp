@@ -21,18 +21,26 @@ int main (){
     cout << "How much would you like to withdrawl? $";
     cin >> amount_with;
 
+ // Calculations
 
-// Calculations
-if (amount_depo > 1){
+if (amount_depo > 0 && amount_with > 0) {
+    final_balance = acc_balance + amount_depo - amount_with;
+}
+else if (amount_depo > 0) {
     final_balance = acc_balance + amount_depo;
 }
-else if (amount_with > 1){
+else if (amount_with > 0) {
     final_balance = acc_balance - amount_with;
 }
-    
+else {
+    final_balance = acc_balance;
+}
     // Final
-    cout << "Hello " << name << endl;
-    cout << "Account number: 482917560394" << endl;
-    cout << "Account balance: $" << final_balance << endl;
+    cout << "\n========= RECEIPT =========\n";
+    cout << "Hello " << name << "\n" << endl;
+    cout << "Account number: 5839201746"  << "\n" <<  endl;
+    cout << "Account balance: $" << final_balance << "\n" << endl;
+    cout << "===========================\n";
+    return 0;
 
 }

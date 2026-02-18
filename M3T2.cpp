@@ -21,7 +21,7 @@ int main() {
 
     // Roll two dice and show the results
     int first, second, total;
-    int result;
+    string result;
     first = roll();
     second = roll();
     total = first + second;
@@ -43,11 +43,12 @@ int main() {
     else if (total == 12) {
         result = "You lose!";
     }
-    else if {
+    else {
         result = "point";
     }
 
-    cout << "Roll results :" << result << endl;
+    cout << "Roll results: " << result << endl;
+
     return 0;
 }
 
@@ -59,5 +60,5 @@ int roll() {
     // finally, add 1 so it's 1 to 6, not zero to five
     int my_roll = (rand() % 6) + 1;
     return my_roll;
-
 }
+

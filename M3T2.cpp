@@ -21,11 +21,33 @@ int main() {
 
     // Roll two dice and show the results
     int first, second, total;
+    int result;
     first = roll();
     second = roll();
     total = first + second;
     cout << "You rolled 🎲 " << first << " + " << second << " = " << total << endl;
     
+    // How did we do
+    if (total == 7) {
+        result = "You win!";
+    }
+    else if (total == 11) {
+        result = "You lose!";
+    }
+    else if (total == 2) {
+        result = "You lose!";
+    }
+    else if (total == 3) {
+        result = "You lose!";
+    }
+    else if (total == 12) {
+        result = "You lose!";
+    }
+    else if {
+        result = "point";
+    }
+
+    cout << "Roll results :" << result << endl;
     return 0;
 }
 
@@ -36,5 +58,6 @@ int roll() {
     // % 6 divides by six, and keeps the remainder
     // finally, add 1 so it's 1 to 6, not zero to five
     int my_roll = (rand() % 6) + 1;
-    return my_roll; 
+    return my_roll;
+
 }

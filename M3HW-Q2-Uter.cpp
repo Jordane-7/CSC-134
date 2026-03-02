@@ -7,10 +7,6 @@
 #include <iostream>
 using namespace std;
 
-
-#include <iostream>
-using namespace std;
-
 int main() {
     // Declare variables
     string meal_name = "Sushi Platter";

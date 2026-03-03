@@ -17,7 +17,7 @@ int main () {
     cout << "Enter your choice (1 or 2): ";
     cin >> choice;
 
-    if (choice ==1){
+    if (choice == 1){
         cout << "\nYou bravely enter the cave..." << endl;
         cout << "Inside, you see a sleeping dragon guarding treasure." << endl;
         cout << "Do you:" << endl;
@@ -38,7 +38,7 @@ int main () {
             cout << "Defeat! Game Over." << endl;
         }
     } 
-    else if (choice1 == 2) {
+    else if (choice == 2) {
         cout << "\nYou run away safely... but trip over a rock." << endl;
         cout << "Game Over. Maybe next time you'll be braver!" << endl;
     } 

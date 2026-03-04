@@ -15,27 +15,29 @@ int main (){
     cout << "What was your quiz grade? " << endl;
     cin >> grade;
 
-    if (grade > 90 || grade < 100){
+    if (grade >= 90 && grade <= 100) {
     letter = "A";
     cout << "Your letter grade is: " << letter << endl;
     }
-    else if (grade > 80 || grade < 89) { 
+    else if (grade >= 80 && grade <= 89) { 
     letter = "B";
     cout << "Your letter grade is: " << letter << endl;
     }
-    else if (grade > 70 || grade < 79) { 
+    else if (grade >= 70 && grade <= 79) { 
     letter = "C";
     cout << "Your letter grade is: " << letter << endl;
     }
-    else if (grade > 60 || grade < 69) { 
+    else if (grade >= 60 && grade <= 69) { 
     letter = "D";
     cout << "Your letter grade is: " << letter << endl;
     }
-    else if (grade > 0 || grade < 59) { 
+    else if (grade >= 0 && grade <= 59) { 
     letter = "F";
     cout << "Your letter grade is: " << letter << endl;
     }
-
+    else {
+    cout << "Invalid grade entered." << endl;
+    }
 
 
     return 0;

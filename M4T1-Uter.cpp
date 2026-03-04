@@ -21,4 +21,20 @@ int main () {
         cout << j << " ";
     }
     cout << "done" << endl;
+
+
+  
+    cout << "Part 3: The Table" << endl;
+    const int MIN = 1;
+    const int MAX = 10;
+
+    int num = MIN;
+    int squared;
+    cout << "Number\t\tNumber Squared\n";
+    cout << "-------------------------------" << endl;
+    while (num <= MAX){
+        squared = num*num;
+        cout << num << "\t\t" << squared << endl;
+        num++;
+    }
 }

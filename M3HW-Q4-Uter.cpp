@@ -13,26 +13,29 @@ int roll();
 
 int main (){
 
-    int first_num, sec_num, answer;
+    int first_num, sec_num, answer, userans;
 
     int seed = time(0);
     srand(seed);
 
     first_num = roll();
-    answer = first_num + sec_num;
     sec_num = roll ();
+    answer = first_num + sec_num;
+    
     cout << "What is " << first_num << " + " << sec_num << " ?" << endl;
-    cin >> answer;
+    cin >> userans;
 
-    if ( answer == answer) {
+    if (userans == answer) {
         cout << "\nThat is correct!" << endl; 
     }
-
+    else if (userans != answer) {
+     cout << "\nThat is incorrect!" << endl; 
+    }
 
     return 0;
 
 }
 
 int roll() {
-    return rand() % 30 + 1;
+    return rand() % 6 + 1;
 }

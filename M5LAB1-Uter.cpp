@@ -4,43 +4,37 @@
 // 3/25/2026
 
 #include <iostream>
-#include "M5LAB1_Uter.h"
+#include "M5LAB1_Uter.H"
 using namespace std;
 
-// Function prototypes
-void do_choice_1();
-void do_choice_2();
-void do_choice_3();
-void do_choice_4();
+
 
 int main() {
-    int choice;  // Variable to store the user's menu choice
+    int choice;
+    cout << "\n--- Drag Race Menu ---\n";
+    cout << "You're currently second place in a drag race!\n";
+    cout << "1. Slam accelerator\n";
+    cout << "2. Use nitro boost\n";
+    cout << "3. Drive aggressively\n";
+    cout << "4. Play it safe (Quit)\n";
+    cout << "Enter your choice: ";
+    cin >> choice;
 
-    // Display introduction message
-    cout << "You're currently second place in a drag race" << endl;
-
-    // Ask the user to choose an option
-    cout << "Please choose an option (1, 2, or 3): ";
-    cin >> choice;  // Get user input
-
-    // Check which option the user selected
     if (choice == 1) {
-        do_choice_1();  // Call function for choice 1
-    } 
+        do_choice_1();
+    }
     else if (choice == 2) {
-        do_choice_2();  // Call function for choice 2
-    } 
+        do_choice_2();
+    }
     else if (choice == 3) {
-        do_choice_3();  // Call function for choice 3
-    } 
+        do_choice_3();
+    }
     else if (choice == 4) {
-        do_choice_4();  // Call function for choice 4
+        do_choice_4();
     }
     else {
-        // If user enters something other than 1, 2, 3, or 4
-        cout << "Invalid choice. Please choose 1, 2, 3, or 4." << endl;
+        cout << "Invalid choice. Please choose 1-4.\n";
     }
 
-
-    return 0;  // End the program successfully
+    return 0;
 }

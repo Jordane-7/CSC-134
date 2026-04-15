@@ -27,7 +27,13 @@ int main() {
     // ... and so on
 
     // How full is it? Just ask.
-    cout << magazine.size();
+    
+
+    int slime =3;
+    int water =2;
+    loadMagazine (magazine, slime, water)
+    cout << "Mag size: "<< magazine.size();
+    displayMagazine (magazine);
 }
 
 // Full Functions go here

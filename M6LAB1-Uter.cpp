@@ -20,20 +20,23 @@ char fireShot(vector<char>& mag);
 int main() {
     vector<char> magazine;   // no size yet — grows as needed
 
-    // 'S' = slime, 'W' = water
-    magazine.push_back('S');
-    magazine.push_back('W');
-    magazine.push_back('S');
-    // ... and so on
-
-    // How full is it? Just ask.
-    
-
     int slime =3;
     int water =2;
-    loadMagazine (magazine, slime, water)
-    cout << "Mag size: "<< magazine.size();
+    loadMagazine (magazine, slime, water);
+    cout << "Mag size: " << magazine.size();
     displayMagazine (magazine);
+
+
+    // Fire shot
+    if (!magazine.empty()) {
+        char s = fireShot(magazine);
+        cout << "You fired: " << s << endl;
+    }
+    
+    //lsit again after shot
+    displayMagazine(magazine);
+
+
 }
 
 // Full Functions go here

@@ -10,11 +10,11 @@ int choice;
 double radius, area_cir, area_rec, area_tri, length_rec, width_rec, base_tri,height_tri ;
 
 int main (){
-    cout << " Welcome to the Geometry Calculator choose an option \n 
-        1. Calculate the Area of a Circle \n
-        2. Calculate the Area of a Rectangle\n
-        3. Calculate the Area of a Triangle\n
-        4. Quit" << endl;
+    cout << " Welcome to the Geometry Calculator choose an option \n "
+        <<  "1. Calculate the Area of a Circle \n "
+        << "2. Calculate the Area of a Rectangle\n "
+        << "3. Calculate the Area of a Triangle\n " 
+        << "4. Quit" << endl;
     
     cin >> choice;
 
@@ -22,7 +22,7 @@ int main (){
         cout << "Please enter the radius of the circle" << endl;
         cin >> radius;
 
-        area_cir = (radius * radius) * 3.14159;
+        area_cir = radius * radius * 3.14159;
         cout << "The area of the circle is " << area_cir << endl;
 
     }

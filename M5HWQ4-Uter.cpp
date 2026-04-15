@@ -18,11 +18,11 @@ int main (){
     
     cin >> choice;
 
-    if (chocie == 1){
+    if (choice == 1){
         cout << "Please enter the radius of the circle" << endl;
         cin >> radius;
 
-        area_cir = (radius * radius) * 3.14159
+        area_cir = (radius * radius) * 3.14159;
         cout << "The area of the circle is " << area_cir << endl;
 
     }
@@ -33,7 +33,7 @@ int main (){
          cout << "Please enter width of the rectangle " << endl;
         cin >> width_rec;
 
-        area_rec = width_rec * length_rec
+        area_rec = width_rec * length_rec;
         cout << "The area of the rectangle is " << area_rec << endl;
 
     }
@@ -44,11 +44,14 @@ int main (){
          cout << "Please enter width of the trianlge's height " << endl;
         cin >> height_tri;
 
-        area_tri = base_tri * height_tri * .5
+        area_tri = base_tri * height_tri * .5;
         cout << "The area of the triangle is " << area_tri << endl;
 
     }
+    else if (choice == 4) {
+        
+    }
 
-    
+
 return 0;
 }

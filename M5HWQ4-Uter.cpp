@@ -4,7 +4,7 @@
 // 4/1/2026
 
 #include <iostream>
-#include <iomanip> // For formatting decimals if desired
+#include <iomanip> 
 using namespace std;
 
 int main() {
@@ -62,7 +62,6 @@ int main() {
         cout << "Program ending..." << endl;
     }
     else {
-        // Validation for menu choices outside 1-4
         cout << "The valid choices are 1 through 4. Run the program again and select one of those." << endl;
     }
 

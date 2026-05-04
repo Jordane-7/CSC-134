@@ -56,12 +56,11 @@ int main() {
 
     cout << "Restaurant Reviews" << endl;
 
-    // Create THREE restaurants with your own values
     Restaurant rest1("Miyabi Japanese Steak & Seafood House", 4.4);
     Restaurant rest2("Olive Garden", 3.8);
     Restaurant rest3("Chick-fil-A", 4.7);
 
-    // Display all three
+
     rest1.display();
     rest2.display();
     rest3.display();

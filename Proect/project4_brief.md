@@ -1,15 +1,16 @@
 # Design Document — Project 4
 
 **Name:** Jordane Uter
+
 **Track:** A  
 **Project Title:** Fitness & Goal Tracker  
-**One-sentence pitch:** A terminal application that calculates health stats (BMI) and logs workout sessions to track total weight lifted over time.
+**One-sentence pitch:** This program calculates a user's BMI and logs their workout to show the total weight they lifted.
 
 ---
 
 ## 1. The Problem
 
-Lifters and fitness enthusiasts often have difficulty calculating their "total volume" (Total Weight Lifted) across different exercises in a single session. This program provides a quick, user-friendly way to log sets, reps, and weights while providing a health dashboard that adapts to the user's preferred unit system (Metric or Imperial).
+It is hard for people to remember exactly how much total weight they lifted during a workout. This program makes it easy to log exercises and see a "Grand Total." It also helps users track their body weight and health stats using either Metric (kg) or Imperial (lbs) units.
 
 ---
 
@@ -17,25 +18,25 @@ Lifters and fitness enthusiasts often have difficulty calculating their "total v
 
 | Data | Type | What Changes It |
 |---|---|---|
-| User Name | string | Initial user input |
-| Body Weight | double | Initial user input |
-| Height | double | Initial user input |
-| Unit System | char | Selection between Metric (M) or Imperial (I) |
-| Workout List | vector<Exercise> | Adding new exercises during the logging loop |
-| Total Weight Lifted | double | Calculated as (Sets * Reps * Weight) |
+| User Name | text | User typing it in at the start |
+| Body Weight | number | User typing it in at the start |
+| Height | number | User typing it in at the start |
+| Units (M or I) | character | User choosing Metric or Imperial |
+| Exercise List | list | Adding a new exercise to the session |
+| Total Lifted | number | Calculated using: sets * reps * weight |
 
 ---
 
 ## 3. Function / Component Map
 
-| Function or Component | What It Does | Inputs | Outputs |
+| Function Name | What It Does | Inputs | Outputs |
 |---|---|---|---|
-| initProfile() | Prompts user for name, height, weight, and units | none | UserProfile struct |
-| displayDashboard() | Displays user info and calculated BMI status | UserProfile | none |
-| calculateBMI() | Computes BMI based on Metric or Imperial formulas | UserProfile | double (BMI) |
-| getExerciseInput() | Handles prompts for specific exercise data | char (units) | Exercise struct |
-| displaySessionSummary()| Prints a formatted table of all session lifts | vector<Exercise>| none |
-| saveSessionToHistory() | Appends the session grand total to a log file | double | none |
+| initProfile() | Asks for user name, height, and weight | none | User info |
+| displayDashboard() | Shows the user's current stats and BMI | User info | text on screen |
+| calculateBMI() | Does the math for the BMI score | User info | BMI number |
+| getExerciseInput() | Asks for exercise name and lift numbers | unit type | Exercise info |
+| displaySummary() | Prints the final table of all lifts | list of exercises| text on screen |
+| saveSession() | Saves the total weight to a text file | total weight | saved file |
 
 ---
 
@@ -43,18 +44,17 @@ Lifters and fitness enthusiasts often have difficulty calculating their "total v
 
 **Main path:**
 
-1. User runs the program and enters their personal profile data (Name, Height, Weight).
-2. The program displays a "Dashboard" showing their current stats and BMI classification.
-3. The user enters a loop where they input the name, sets, reps, and weight for an exercise.
-4. After each exercise, the user chooses whether to add another or finish.
-5. Once finished, a summary table shows each lift and a "Grand Total" for the session.
-6. The session total is automatically saved to `workout_history.txt`.
+1. User starts the program and enters their name and body stats.
+2. The program shows their BMI and weight status.
+3. User types in an exercise name, then enters sets, reps, and weight used.
+4. User chooses to either add another exercise or stop.
+5. The program shows a summary table and the "Grand Total" lifted.
+6. The total weight is saved into a file called `workout_history.txt`.
 
 **Key branches:**
 
-- **Metric vs. Imperial:** If the user picks 'M', they enter kg/cm; if 'I', they enter lbs/in.
-- **Input Loop:** If the user enters 'y', the loop restarts; if 'n', the summary prints.
-- **File Persistence:** If `workout_history.txt` doesn't exist, the system creates it automatically.
+- **Units:** If the user picks 'M', they use kg/cm. If they pick 'I', they use lbs/in.
+- **Repeat:** The user can add as many exercises as they want until they say "no."
 
 ---
 
@@ -62,9 +62,9 @@ Lifters and fitness enthusiasts often have difficulty calculating their "total v
 
 | Risk | Plan |
 |---|---|
-| User enters text for a numeric field (Weight/Reps) | Use cin.clear() and cin.ignore() to manage the input buffer |
-| Mixing cin and getline causes skipped inputs | Explicitly use cin.ignore() after numeric reads before calling getline |
-| Negative numbers entered for stats | Logic check: calculate volume as 0 or ignore negative inputs |
+| User types letters when a number is needed | Use code to clear the error and ask again |
+| User skips the name input | Use "cin.ignore" to make sure the name is recorded correctly |
+| File doesn't exist | The program will create a new file automatically |
 
 ---
 
@@ -72,15 +72,15 @@ Lifters and fitness enthusiasts often have difficulty calculating their "total v
 
 | Task | Why AI Help Makes Sense |
 |---|---|
-| Formatting the Output Table | Using <iomanip> flags like setw and left is easier to iterate with AI guidance |
-| BMI Formula Conversions | Ensuring the math for the Imperial constant (703.0) and Metric conversions is accurate |
+| Making the summary table look neat | Aligning columns in a terminal can be tricky |
+| BMI Math formulas | To make sure the Imperial vs Metric math is exactly right |
 
 ---
 
 ## 7. What I'll Do Myself (No AI)
 
-1. **The Logic Flow:** Designing the order in which functions are called in main.
-2. **Data Modeling:** Deciding which variables belong in the UserProfile vs. the Exercise struct.
+1. **Program Structure:** I will decide the order of the functions.
+2. **Variable Setup:** I will choose the names and types for all variables.
 
 ---
 
@@ -88,13 +88,11 @@ Lifters and fitness enthusiasts often have difficulty calculating their "total v
 
 - Can I build the C-tier version in one focused work session? **yes**
 - Does every feature in my plan connect to the core interaction? **yes**
-- Have I cut anything that's "nice to have" but not essential? **yes** (I removed persistent profile loading to focus on the core workout logic).
+- Have I cut anything that's "nice to have" but not essential? **yes**
 
 ---
 
 ## Instructor Approval
-
-*To be filled out during Week 13 check-in:*
 
 - [ ] Scope is appropriate
 - [ ] State inventory is complete

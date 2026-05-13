@@ -1,5 +1,5 @@
 // CSC 134
-// M7T1 - restaurant reviews
+// M6HW - Text Adventure Game
 // Jordane
 // 5/4/2025
 

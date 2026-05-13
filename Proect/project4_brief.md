@@ -1,164 +1,104 @@
-# Project 4: AI-Assisted Development
+# Design Document — Project 4
 
-**CSC 134 — Weeks 13–15 | Due: End of Week 15**
-
-You've spent twelve weeks learning to think like a programmer. Now you'll learn to think like a *lead developer* — someone who directs the work, makes design calls, and uses every tool available to ship something real.
-
-This project is built with AI. Not by AI. You drive.
-
----
-
-## Pick Your Track
-
-All three tracks earn the same grade. Choose based on what you want to build, not what seems easiest.
-
-**Track A — C++ Program**
-Build a terminal application in C++. Use everything you've learned: functions, arrays/vectors, file I/O, classes. This is the most direct continuation of the course.
-
-**Track B — C++ to Visual**
-Start in C++, then port your core logic into an HTML/JS application. Your C++ version serves as the prototype; the visual version is the deliverable. Good for students who want to see their work come alive in a browser.
-
-**Track C — Direct to Visual (HTML/JS)**
-Design and plan in structured English and pseudocode, then build directly in HTML/JS with AI assistance. The planning documents carry the same weight as code — you must demonstrate the same structured thinking a C++ solution would require.
-
-> **Why allow non-C++ tracks?** The hardest part of programming isn't syntax. It's decomposing a problem, managing state, and making design decisions. A student who produces a clear design document, iterates thoughtfully with AI, and ships a working product has demonstrated those skills — regardless of language.
+**Name:** Jordane Uter
+**Track:** A  
+**Project Title:** Fitness & Goal Tracker  
+**One-sentence pitch:** A terminal application that calculates health stats (BMI) and logs workout sessions to track total weight lifted over time.
 
 ---
 
-## What to Build
+## 1. The Problem
 
-Your project must be an interactive program with meaningful state. That means the program tracks, modifies, and responds to data as the user interacts with it.
-
-**Scope guidance:** Think "one feature done well" over "five features done halfway." A polished inventory tracker beats a sprawling RPG that crashes.
-
-### Idea Starters
-
-These are seeds, not prescriptions. Combine them. Twist them. Bring your own.
-
-- Dungeon crawler with room/item state
-- Budget tracker with categories and file persistence
-- Quiz engine that loads questions from a file and tracks scores
-- Narrative game with branching paths and an inventory system
-- Fitness log with history, averages, and goals
-- Recipe manager with search, scaling, and favorites
+Lifters and fitness enthusiasts often have difficulty calculating their "total volume" (Total Weight Lifted) across different exercises in a single session. This program provides a quick, user-friendly way to log sets, reps, and weights while providing a health dashboard that adapts to the user's preferred unit system (Metric or Imperial).
 
 ---
 
-## Grade Tiers
+## 2. State Inventory
 
-### C Tier (70%) — It Works
-
-- Interactive: takes input, produces output based on state
-- Minimum 3 functions (Track A) or 3 distinct components/sections (Tracks B/C)
-- Basic input validation — doesn't crash on bad input
-- State tracking: at least 2 variables that change during use
-- Design document completed before coding began
-- AI interaction log submitted
-
-### B Tier (85%) — It's Solid
-
-Everything in C, plus:
-
-- 5+ functions or components
-- File I/O (Track A) or localStorage/equivalent persistence (Tracks B/C)
-- Menu or navigation system
-- Comprehensive input validation
-- At least one data structure used meaningfully (array, vector, object)
-- Evidence of iteration: log shows you revised AI output, not just accepted it
-
-### A Tier (95%) — It's Polished
-
-Everything in B, plus:
-
-- Clean separation of concerns (display logic vs. data logic vs. file logic)
-- Meaningful use of classes/objects (Track A) or modular code organization (Tracks B/C)
-- Edge cases handled — difficult to break
-- Visual polish: consistent formatting, clear interface, good UX
-- Design document shows evolution from initial plan to final product
-- AI log demonstrates at least one instance where you rejected AI output and explains why
-
-### Badge Track (Additional)
-
-All of A tier, plus the capstone deliverables defined in the badge requirements: requirements analysis, OO design documentation, test plan, and portfolio-ready reflection.
-
----
-
-## Track-Specific Notes
-
-### Track A: C++
-
-- Compile with `g++ -std=c++17 -Wall -Wextra` — clean build, no warnings
-- Follow course conventions: prototypes at top, main in middle, definitions at bottom
-- Use `const` by default. Prefer STL algorithms over raw loops where they fit.
-- Vectors are available (Week 13+). Use them instead of raw arrays for dynamic data.
-- If you use ncurses or terminal graphics, document your build command.
-
-### Track B: C++ → Visual
-
-- Your C++ prototype doesn't need to be pretty. It proves your logic works.
-- The port doesn't need to replicate every feature — focus on the core interaction.
-- Document what changed in the port and why. This is valuable learning.
-- Your design doc should note which parts of C++ translated cleanly and which didn't.
-
-### Track C: Direct to Visual
-
-- Your design document carries extra weight. It must show the same rigor a C++ student puts into code structure: function decomposition, state management plan, data flow.
-- HTML/JS projects should be single-file or minimal-file. No frameworks beyond what you can explain.
-- If you use a library (p5.js, Chart.js, etc.), you must explain in your log why you chose it and what it does.
-
----
-
-## Rubric
-
-| Component | Weight | What We're Looking For |
+| Data | Type | What Changes It |
 |---|---|---|
-| **Design & Planning** | 25% | Did you think before you typed? Does the design doc show structure, not just a wishlist? |
-| **Working Product** | 30% | Does it run? Does it do what you said it would? Is the core interaction solid? |
-| **Code Quality** | 20% | Readable, organized, follows conventions. Comments explain *why*, not *what*. |
-| **AI Collaboration** | 15% | Log shows a real working relationship: directing, iterating, questioning, learning. |
-| **Testing & Polish** | 10% | Validated inputs, handled edge cases, consistent interface. |
+| User Name | string | Initial user input |
+| Body Weight | double | Initial user input |
+| Height | double | Initial user input |
+| Unit System | char | Selection between Metric (M) or Imperial (I) |
+| Workout List | vector<Exercise> | Adding new exercises during the logging loop |
+| Total Weight Lifted | double | Calculated as (Sets * Reps * Weight) |
 
 ---
 
-## Submission Checklist
+## 3. Function / Component Map
 
-Submit all files to your GitHub repository by the Week 15 deadline.
-
-```
-project4/
-├── design_doc.md          ← Completed BEFORE coding (we can see git timestamps)
-├── src/                   ← Your source code (organized however fits your track)
-├── ai_log.md              ← AI interaction log (use the provided template)
-├── testing_log.md         ← Test cases, results, bugs found and fixed
-└── README.md              ← What you built, which track, how to run it
-```
-
-**README.md must include:**
-- Project title and one-sentence description
-- Which track (A, B, or C)
-- How to compile/run (exact commands)
-- One paragraph: what you're most proud of, and what you'd improve with more time
-
-**Late policy:** Same as all projects. On time = full credit available. Each day late caps 10% lower.
+| Function or Component | What It Does | Inputs | Outputs |
+|---|---|---|---|
+| initProfile() | Prompts user for name, height, weight, and units | none | UserProfile struct |
+| displayDashboard() | Displays user info and calculated BMI status | UserProfile | none |
+| calculateBMI() | Computes BMI based on Metric or Imperial formulas | UserProfile | double (BMI) |
+| getExerciseInput() | Handles prompts for specific exercise data | char (units) | Exercise struct |
+| displaySessionSummary()| Prints a formatted table of all session lifts | vector<Exercise>| none |
+| saveSessionToHistory() | Appends the session grand total to a log file | double | none |
 
 ---
 
-## Timeline
+## 4. User Flow
 
-| Week | Milestone | What's Due |
-|---|---|---|
-| 13 | **Design week.** Complete your design document. Get instructor approval on scope. | `design_doc.md` draft pushed to repo |
-| 14 | **Build week.** Iterate with AI. Test as you go. | Progress check: working prototype |
-| 15 | **Polish week.** Fix bugs, improve UX, complete documentation. | Everything in the checklist above |
+**Main path:**
+
+1. User runs the program and enters their personal profile data (Name, Height, Weight).
+2. The program displays a "Dashboard" showing their current stats and BMI classification.
+3. The user enters a loop where they input the name, sets, reps, and weight for an exercise.
+4. After each exercise, the user chooses whether to add another or finish.
+5. Once finished, a summary table shows each lift and a "Grand Total" for the session.
+6. The session total is automatically saved to `workout_history.txt`.
+
+**Key branches:**
+
+- **Metric vs. Imperial:** If the user picks 'M', they enter kg/cm; if 'I', they enter lbs/in.
+- **Input Loop:** If the user enters 'y', the loop restarts; if 'n', the summary prints.
+- **File Persistence:** If `workout_history.txt` doesn't exist, the system creates it automatically.
 
 ---
 
-## One Last Thing
+## 5. What Could Go Wrong
 
-The earlier projects taught you to write code. This one teaches you to *direct* code. That's a different and harder skill. You'll need to:
+| Risk | Plan |
+|---|---|
+| User enters text for a numeric field (Weight/Reps) | Use cin.clear() and cin.ignore() to manage the input buffer |
+| Mixing cin and getline causes skipped inputs | Explicitly use cin.ignore() after numeric reads before calling getline |
+| Negative numbers entered for stats | Logic check: calculate volume as 0 or ignore negative inputs |
 
-- Explain what you want clearly enough for an AI to help
-- Recognize when AI output is wrong, wasteful, or off-track
-- Make decisions the AI can't make for you: scope, priorities, tradeoffs
+---
 
-The design document is where that thinking lives. Start there.
+## 6. What I'll Ask AI to Help With
+
+| Task | Why AI Help Makes Sense |
+|---|---|
+| Formatting the Output Table | Using <iomanip> flags like setw and left is easier to iterate with AI guidance |
+| BMI Formula Conversions | Ensuring the math for the Imperial constant (703.0) and Metric conversions is accurate |
+
+---
+
+## 7. What I'll Do Myself (No AI)
+
+1. **The Logic Flow:** Designing the order in which functions are called in main.
+2. **Data Modeling:** Deciding which variables belong in the UserProfile vs. the Exercise struct.
+
+---
+
+## 8. Scope Check
+
+- Can I build the C-tier version in one focused work session? **yes**
+- Does every feature in my plan connect to the core interaction? **yes**
+- Have I cut anything that's "nice to have" but not essential? **yes** (I removed persistent profile loading to focus on the core workout logic).
+
+---
+
+## Instructor Approval
+
+*To be filled out during Week 13 check-in:*
+
+- [ ] Scope is appropriate
+- [ ] State inventory is complete
+- [ ] Function map shows clear decomposition
+- [ ] Student knows what they'll ask AI for and what they'll do themselves
+
+**Notes:**

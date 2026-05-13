@@ -1,0 +1,8 @@
+Data,Type,What Changes It
+User Name,string,Initial setup or loading from profile.txt
+Body Weight,double,Initial setup or profile load
+Height,double,Initial setup or profile load
+Unit System,char,User selection ('M' or 'I')
+Exercise List,vector<Exercise>,Adding new exercises during the session loop
+Total Weight Lifted,double,Calculated as Sets×Reps×Weight
+BMI,double,Calculated based on weight/height/unit state

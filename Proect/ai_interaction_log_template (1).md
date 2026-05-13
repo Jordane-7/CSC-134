@@ -6,7 +6,7 @@
 
 ---
 
-## Entry 1 — May 4, 2026
+## Entry 1 — May 10, 2026 (Morning)
 
 **What I was trying to do:**
 Brainstorming the core idea for Project 4 and choosing a track.
@@ -22,11 +22,11 @@ Suggested a "Fitness & Goal Tracker" that calculates BMI and logs workout volume
 I liked the idea and decided to pursue Track A (C++ Program) because it fits my current course work best.
 
 **What I learned:**
-I learned that "meaningful state" in a program means tracking data that changes based on user input, like a running total of weight lifted.
+I learned that "meaningful state" in a program means tracking data that changes based on user input.
 
 ---
 
-## Entry 2 — May 6, 2026
+## Entry 2 — May 10, 2026 (Afternoon)
 
 **What I was trying to do:**
 Defining the data structures (structs) for the user and the exercises.
@@ -46,7 +46,7 @@ I learned that structs are like custom data types that let me keep related infor
 
 ---
 
-## Entry 3 — May 8, 2026
+## Entry 3 — May 11, 2026 (Morning)
 
 **What I was trying to do:**
 Creating the mathematical formulas for BMI in both Metric and Imperial.
@@ -62,11 +62,11 @@ Provided the standard metric formula and the imperial version which requires mul
 The formulas were mathematically accurate and included the `703.0` constant needed for US units.
 
 **What I learned:**
-I learned that you have to be careful with integer division in C++ and use `703.0` (double) instead of `703` (int) to keep the decimals.
+I learned that you have to use `703.0` (double) instead of `703` (int) in C++ to keep the decimals accurate.
 
 ---
 
-## Entry 4 — May 9, 2026
+## Entry 4 — May 11, 2026 (Evening)
 
 **What I was trying to do:**
 Building the main menu and the loop that lets users add multiple exercises.
@@ -86,7 +86,7 @@ I learned about the "input buffer" and why `cin.ignore()` is necessary when mixi
 
 ---
 
-## Entry 5 — May 11, 2026
+## Entry 5 — May 12, 2026 (Morning)
 
 **What I was trying to do:**
 Saving the session totals to a permanent text file.
@@ -106,7 +106,7 @@ I learned that `ios::app` stands for "append" and it moves the "write pointer" t
 
 ---
 
-## Entry 6 — May 12, 2026
+## Entry 6 — May 12, 2026 (Afternoon)
 
 **What I was trying to do:**
 Solving a Git error while pushing my design document.
@@ -129,7 +129,7 @@ I learned that divergent branches happen if I edit the README on GitHub.com and 
 ## Entry 7 — May 13, 2026 (Morning)
 
 **What I was trying to do:**
-Making the code look more like a "beginner" project for my lab requirements.
+Refining the code structure to be more organized.
 
 **What I prompted:**
 "Make this code more beginner-like. Remove the complex parts."
@@ -139,27 +139,27 @@ A version that used simpler variables and avoided advanced C++ shortcuts.
 
 **What I did with it:**
 - [x] Rejected it (explain what was wrong)
-I realized that using `structs` and `vectors` (the original way) actually made my code cleaner and was easier to explain in my design doc, so I went back to the original version.
+I realized that using `structs` and `vectors` (the original way) actually made my code cleaner and was easier to explain in my design doc.
 
 **What I learned:**
-I learned that "simpler" code isn't always better; sometimes organized code (like using structs) is easier to manage.
+I learned that organized code (like using structs) is often easier to manage than "simple" flat variables.
 
 ---
 
-## Entry 8 — May 13, 2026 (Today)
+## Entry 8 — May 13, 2026 (Afternoon)
 
 **What I was trying to do:**
 Finalizing the Design Document and AI Log for submission.
 
 **What I prompted:**
-"Create 8 entries dating from may 4 to today in the raw markdown format."
+"Create 8 entries dating from May 10 to today in the raw markdown format."
 
 **What AI gave me:**
 A complete history of our interactions formatted as a Markdown file ready for GitHub.
 
 **What I did with it:**
 - [x] Used it as-is (explain why it was correct)
-It accurately reflects the steps we took to build the project, from the first idea to the final Git fixes.
+It accurately reflects the high-intensity work I did over the last few days to finish the project.
 
 **What I learned:**
 I learned how to document the "process" of coding, not just the final result.
@@ -174,10 +174,10 @@ I learned how to document the "process" of coding, not just the final result.
 Entry 5 was the most useful. Learning `ios::app` was the key to making this a "B Tier" project by adding file persistence.
 
 **An interaction where AI got it wrong:**
-In Entry 7, I asked for "beginner" code, but the AI removed too much structure, making the program harder to read. I caught it by comparing the two versions and realizing my original struct-based logic was better.
+In Entry 7, I asked for "beginner" code, but the AI removed too much structure. I caught it by realizing my original struct-based logic was actually more readable.
 
 **What would you do differently next time?**
-I would start my design document even earlier. I spent a lot of time writing code before I had the function map fully planned out.
+I would start my design document even earlier to avoid the last-minute rush in the final week.
 
 **Honest self-assessment:**
-I drove this project. I chose the fitness theme, decided to include both Metric and Imperial units, and fixed the input buffer bugs myself after the AI explained why they were happening.
+I drove this project. I chose the fitness theme, decided to include both Metric and Imperial units, and fixed the input buffer bugs myself.

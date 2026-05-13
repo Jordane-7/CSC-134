@@ -6,7 +6,7 @@
 
 ---
 
-## Entry 1 — May 10, 2026 (Morning)
+## Entry 1 — May 10, 2026 
 
 **What I was trying to do:**
 Brainstorming the core idea for Project 4 and choosing a track.
@@ -26,7 +26,7 @@ I learned that "meaningful state" in a program means tracking data that changes 
 
 ---
 
-## Entry 2 — May 10, 2026 (Afternoon)
+## Entry 2 — May 10, 2026 
 
 **What I was trying to do:**
 Defining the data structures (structs) for the user and the exercises.
@@ -46,7 +46,7 @@ I learned that structs are like custom data types that let me keep related infor
 
 ---
 
-## Entry 3 — May 11, 2026 (Morning)
+## Entry 3 — May 11, 2026 
 
 **What I was trying to do:**
 Creating the mathematical formulas for BMI in both Metric and Imperial.
@@ -66,7 +66,7 @@ I learned that you have to use `703.0` (double) instead of `703` (int) in C++ to
 
 ---
 
-## Entry 4 — May 11, 2026 (Evening)
+## Entry 4 — May 11, 2026
 
 **What I was trying to do:**
 Building the main menu and the loop that lets users add multiple exercises.
@@ -86,7 +86,7 @@ I learned about the "input buffer" and why `cin.ignore()` is necessary when mixi
 
 ---
 
-## Entry 5 — May 12, 2026 (Morning)
+## Entry 5 — May 12, 2026
 
 **What I was trying to do:**
 Saving the session totals to a permanent text file.
@@ -106,7 +106,7 @@ I learned that `ios::app` stands for "append" and it moves the "write pointer" t
 
 ---
 
-## Entry 6 — May 12, 2026 (Afternoon)
+## Entry 6 — May 12, 2026 
 
 **What I was trying to do:**
 Solving a Git error while pushing my design document.
@@ -126,7 +126,7 @@ I learned that divergent branches happen if I edit the README on GitHub.com and 
 
 ---
 
-## Entry 7 — May 13, 2026 (Morning)
+## Entry 7 — May 13, 2026
 
 **What I was trying to do:**
 Refining the code structure to be more organized.
@@ -146,7 +146,7 @@ I learned that organized code (like using structs) is often easier to manage tha
 
 ---
 
-## Entry 8 — May 13, 2026 (Afternoon)
+## Entry 8 — May 13, 2026 
 
 **What I was trying to do:**
 Finalizing the Design Document and AI Log for submission.

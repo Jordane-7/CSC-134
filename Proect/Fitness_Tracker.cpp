@@ -25,8 +25,6 @@ struct Exercise {
 
 // --- Function Prototypes ---
 UserProfile initProfile();
-void saveProfile(UserProfile u);
-bool loadProfile(UserProfile &u);
 void displayDashboard(UserProfile user);
 double calculateBMI(UserProfile user);
 Exercise getExerciseInput(char unitType);
@@ -38,15 +36,12 @@ int main() {
     vector<Exercise> sessionWorkouts;
     char choice;
 
-    // Phase 1: Profile Loading/Setup
-    if (!loadProfile(myProfile)) {
-        myProfile = initProfile();
-        saveProfile(myProfile);
-    }
+    // Profile Setup (Always asks now, no saving/loading)
+    myProfile = initProfile();
 
     displayDashboard(myProfile);
 
-    // Phase 2: Workout Logging Loop
+    // Workout Logging Loop
     cout << "\n--- Start Your Workout Session ---" << endl;
     do {
         Exercise newEntry = getExerciseInput(myProfile.unitType);
@@ -54,10 +49,10 @@ int main() {
 
         cout << "\nAdd another exercise? (y/n): ";
         cin >> choice;
-        cin.ignore(); // Clean buffer for next string input
+        cin.ignore(); // Clean buffer
     } while (choice == 'y' || choice == 'Y');
 
-    // Phase 3: Results and Persistence
+    // Results and Session Logging
     displaySessionSummary(sessionWorkouts);
 
     double sessionTotal = 0;
@@ -75,7 +70,7 @@ int main() {
 
 UserProfile initProfile() {
     UserProfile u;
-    cout << "--- Fitness Tracker: First Time Setup ---" << endl;
+    cout << "--- Fitness Tracker Setup ---" << endl;
     cout << "Enter your name: ";
     getline(cin, u.name);
 
@@ -92,30 +87,6 @@ UserProfile initProfile() {
     }
     cin.ignore(); 
     return u;
-}
-
-void saveProfile(UserProfile u) {
-    ofstream outFile("profile.txt");
-    if (outFile) {
-        outFile << u.name << endl;
-        outFile << u.unitType << endl;
-        outFile << u.weight << endl;
-        outFile << u.height << endl;
-        outFile.close();
-        cout << "[System: Profile Saved]" << endl;
-    }
-}
-
-bool loadProfile(UserProfile &u) {
-    ifstream inFile("profile.txt");
-    if (!inFile) return false;
-
-    getline(inFile, u.name);
-    inFile >> u.unitType;
-    inFile >> u.weight;
-    inFile >> u.height;
-    inFile.close();
-    return true;
 }
 
 double calculateBMI(UserProfile user) {

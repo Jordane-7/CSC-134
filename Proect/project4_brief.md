@@ -79,7 +79,7 @@ It is hard for people to remember exactly how much total weight they lifted duri
 
 ## 7. What I'll Do Myself (No AI)
 
-1. **Program Structure:** I will decide the order of the functions.
+1. **Program Structure:** I will decide the order of the functions, necessary calculations and simple codes I learned already.
 2. **Variable Setup:** I will choose the names and types for all variables.
 
 ---
